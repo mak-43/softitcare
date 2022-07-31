@@ -3,9 +3,11 @@ import { Link, NavLink, useNavigate } from "react-router-dom"
 import { signOut } from 'firebase/auth'
 import auth from '../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import useAdmin from '../Hooks/useAdmin';
 
 const Navbar = ({ children }) => {
     const [user, loading, error] = useAuthState(auth);
+    const [admin]=useAdmin(user)
     const navigate = useNavigate()
 
     const logout = () => {
@@ -18,6 +20,9 @@ const Navbar = ({ children }) => {
         <li><NavLink className='rounded' to='/'>Home</NavLink></li>
         <li><NavLink className='rounded' to='/shop'>Shop</NavLink></li>
         <li><NavLink className='rounded' to='/about'>About Us</NavLink></li>
+        {
+            admin && <li><NavLink className='rounded' to='/admin'>Admin</NavLink></li>
+        }
 
 
         <li>{user ? <i onClick={logout} class="fa-solid fa-right-from-bracket rounded-lg"></i> : <NavLink to='/signin' className='rounded-lg'>Login</NavLink>}</li>
