@@ -7,7 +7,7 @@ import Loading from '../Components/Loading';
 import { toast } from 'react-toastify';
 import auth from '../firebase.init';
 
-import './Sign.css'
+
 const Signup = () => {
     const [hide, setHide] = useState(false)
     const [hidee, setHidee] = useState(false)
@@ -82,14 +82,14 @@ const Signup = () => {
     }
 
     return (
-        <div className='flex flex-col justify-center bg-accent items-center h-screen bg-img'>
+        <div className='flex flex-col justify-center bg-accent items-center h-screen '>
 
 
 
-            <div class="rounded-xl flex-shrink-0 w-full max-w-sm  bg-secondary border border-primary ">
+            <div class="rounded-xl flex-shrink-0 w-full max-w-sm  border border-primary ">
 
                 <div className='text-center mt-5 py-5 w-full border-b border-primary rounded-t-lg  '>
-                    <h1 className='text-4xl font-bold text-primary font-Goldman title '>CHILL</h1>
+                    <h1 className='text-4xl font-bold text-primary font-Goldman title  my-3'>SoftIT Care</h1>
                     <p className='text-white '>Start your 15 days free trial</p>
                 </div>
                 <div class="card-body  ">
@@ -107,7 +107,7 @@ const Signup = () => {
 
                                 type="email"
                                 placeholder="Enter Email"
-                                className="bg-secondary px-2 text-white"
+                                className="bg-white rounded px-2 "
                                 {...register("email", {
                                     required: {
                                         value: true,
@@ -133,7 +133,7 @@ const Signup = () => {
                             <input
                                 type={!hide ? 'password' : 'text'}
                                 placeholder="Enter password"
-                                className="bg-secondary px-2 py-2 text-white"
+                                className="bg-white rounded px-2 py-2 "
                                 {...register("password", {
                                     required: {
                                         value: true,
@@ -166,7 +166,7 @@ const Signup = () => {
                             <input
                                 type={!hidee ? 'password' : 'text'}
                                 placeholder="Confirm password"
-                                className="bg-secondary px-2 py-2 text-white"
+                                className="bg-white rounded px-2 py-2 "
                                 {...register("cpassword", {
                                     required: {
                                         value: true,
