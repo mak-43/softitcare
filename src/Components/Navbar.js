@@ -4,10 +4,12 @@ import { signOut } from 'firebase/auth'
 import auth from '../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import useAdmin from '../Hooks/useAdmin';
+import useVendor from '../Hooks/useVendor';
 
 const Navbar = ({ children }) => {
     const [user, loading, error] = useAuthState(auth);
     const [admin]=useAdmin(user)
+    const [vendor]=useVendor(user)
     const navigate = useNavigate()
 
     const logout = () => {
@@ -20,6 +22,9 @@ const Navbar = ({ children }) => {
         <li><NavLink className='rounded' to='/'>Home</NavLink></li>
         <li><NavLink className='rounded' to='/shop'>Shop</NavLink></li>
         <li><NavLink className='rounded' to='/about'>About Us</NavLink></li>
+        {
+            vendor &&     <li><NavLink className='rounded' to='/addproduct'>Add Product</NavLink></li>
+        }
         {
             admin && <li><NavLink className='rounded' to='/admin'>Admin</NavLink></li>
         }
