@@ -1,11 +1,11 @@
 import React from 'react';
-import { useForm } from 'react-hook-form'; 
+import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
-const AddModal = ({setAdd,refetch}) => {
+const AddModal = ({ setAdd, refetch }) => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
-        
+
         const image = data?.img[0]
         const formData = new FormData()
         formData.append('image', image)
@@ -27,7 +27,7 @@ const AddModal = ({setAdd,refetch}) => {
                         price: data.price,
 
                     }
-                    fetch(`https://morning-atoll-82384.herokuapp.com/addproduct`, {
+                    fetch(`https://guarded-bayou-85671.herokuapp.com/addproduct`, {
                         method: 'post',
                         headers: {
                             'content-type': 'application/json'
@@ -51,7 +51,7 @@ const AddModal = ({setAdd,refetch}) => {
     return (
         <div>
 
-  
+
 
 
             <input type="checkbox" id="addmodal" class="modal-toggle" />
@@ -82,7 +82,7 @@ const AddModal = ({setAdd,refetch}) => {
 
                         </div>
                     </form>
-                    
+
                 </div>
             </div>
         </div >

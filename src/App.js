@@ -9,6 +9,10 @@ import Admin from "./Pages/Admin";
 import RequireAdmin from "./Components/RequireAdmin";
 import RequireVendor from "./Components/RequireVendor";
 import AddProduct from "./Pages/AddProduct";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
+import Footer from "./Components/Footer";
+import NotFound from "./Components/NotFound";
 function App() {
   return (
     <div >
@@ -22,8 +26,13 @@ function App() {
 
             <Route path='/signin' element={<Signin/>}/>
             <Route path='/signup' element={<Signup/>}/>
+
+            <Route path='*' element={<NotFound />}></Route>
           </Routes>
+          <Footer/>
        </Navbar>
+     
+       <ToastContainer />
     </div>
   );
 }

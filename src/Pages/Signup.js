@@ -82,15 +82,15 @@ const Signup = () => {
     }
 
     return (
-        <div className='flex flex-col justify-center bg-accent items-center h-screen '>
+        <div className='flex flex-col justify-center bg-info items-center h-screen '>
 
 
 
-            <div class="rounded-xl flex-shrink-0 w-full max-w-sm  border border-primary ">
+            <div class="rounded-xl flex-shrink-0 w-full max-w-sm bg-accent  border border-primary ">
 
                 <div className='text-center mt-5 py-5 w-full border-b border-primary rounded-t-lg  '>
-                    <h1 className='text-4xl font-bold text-primary font-Goldman title  my-3'>SoftIT Care</h1>
-                    <p className='text-white '>Start your 15 days free trial</p>
+                    <h1 className='text-4xl font-bold font-Goldman title  my-3'>SoftIT Care</h1>
+
                 </div>
                 <div class="card-body  ">
 
@@ -194,9 +194,9 @@ const Signup = () => {
                         {signInError}
 
 
-                        <input className='py-3 mt-5 rounded btn-primary w-full max-w-xs  text-black font-bold uppercase cursor-pointer' type="submit" value="Sign UP" />
+                        <input className='py-3 mt-5 rounded btn-primary w-full max-w-xs   font-bold uppercase cursor-pointer' type="submit" value="Sign UP" />
                     </form>
-                    <Link to='/signin' className=' text-center py-3 mt-3 rounded    text-primary border border-primary font-bold uppercase'>Sign In</Link>
+                    <Link to='/signin' className=' text-center py-3 mt-3 rounded     border btn-info border-primary font-bold uppercase'>Sign In</Link>
                     {/* <p>Forget Password ? <Link to='' 
                          onClick= {resetPassword}
                         className='text-cyan-400'><small>Reset Password</small></Link> </p> */}

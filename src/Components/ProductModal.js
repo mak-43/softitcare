@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const ProductModal = ({ id, refetch, setId }) => {
 
     const handleproduct = id => {
-        fetch(`https://morning-atoll-82384.herokuapp.com/product/${id}`, {
+        fetch(`https://guarded-bayou-85671.herokuapp.com/product/${id}`, {
             method: 'Delete',
         }).then(res => res.json())
             .then(data => {

@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React, { Children, useState } from 'react';
 import { Link, NavLink, useNavigate } from "react-router-dom"
 import { signOut } from 'firebase/auth'
 import auth from '../firebase.init';
@@ -8,8 +8,11 @@ import useVendor from '../Hooks/useVendor';
 
 const Navbar = ({ children }) => {
     const [user, loading, error] = useAuthState(auth);
-    const [admin]=useAdmin(user)
-    const [vendor]=useVendor(user)
+    const [admin] = useAdmin(user)
+    const [vendor] = useVendor(user)
+
+    const [theme, setTheme] = useState()
+
     const navigate = useNavigate()
 
     const logout = () => {
@@ -23,7 +26,7 @@ const Navbar = ({ children }) => {
         <li><NavLink className='rounded' to='/shop'>Shop</NavLink></li>
         <li><NavLink className='rounded' to='/about'>About Us</NavLink></li>
         {
-            vendor &&     <li><NavLink className='rounded' to='/addproduct'>Add Product</NavLink></li>
+            vendor && <li><NavLink className='rounded' to='/addproduct'>Add Product</NavLink></li>
         }
         {
             admin && <li><NavLink className='rounded' to='/admin'>Admin</NavLink></li>
@@ -32,14 +35,22 @@ const Navbar = ({ children }) => {
 
         <li>{user ? <i onClick={logout} class="fa-solid fa-right-from-bracket rounded-lg"></i> : <NavLink to='/signin' className='rounded-lg'>Login</NavLink>}</li>
 
+        <select className=' flex rounded items-center gap-2' onClick={e => setTheme(e.target.value)}>
+            <option value="night">Night</option>
+            <option value="dark">Dark</option>
+            <option value="cupcake">Cupcake</option>
+        </select>
+
+
     </>
+    console.log(theme)
     return (
-        <div>
+        <div data-theme={theme}>
             <div class="drawer ">
                 <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content  flex flex-col ">
                     {/* <!-- Navbar --> */}
-                    <div class="w-full navbar bg-base-300 lg:px-20  ">
+                    <div class="w-full navbar bg-accent lg:px-20  ">
                         <div class="flex-none lg:hidden">
                             <label for="my-drawer-3" class="btn btn-square btn-ghost">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
