@@ -37,8 +37,8 @@ const Navbar = ({ children }) => {
 
         <select className=' flex rounded items-center gap-2' onClick={e => setTheme(e.target.value)}>
             <option value="night">Night</option>
-            <option value="dark">Dark</option>
             <option value="cupcake">Cupcake</option>
+            <option value="dark">Dark</option>
         </select>
 
 
