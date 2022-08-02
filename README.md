@@ -1,5 +1,5 @@
 # Live site Link 
-[https://capable-bunny-a67cdd.netlify.app/](https://capable-bunny-a67cdd.netlify.app/)
+[https://softitcaregulshan.netlify.app/](https://softitcaregulshan.netlify.app/)
 
 ## Admin 
 user: admin@gmail.com 

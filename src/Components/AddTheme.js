@@ -18,9 +18,9 @@ const AddTheme = ({setAdd}) => {
             <input type="checkbox" id="addtheme" class="modal-toggle" />
             <div class="modal modal-bottom sm:modal-middle">
                 <div class="modal-box">
-                    <h3 class="font-bold text-lg">Upload a theme </h3>
+                    <h3 class="font-bold text-lg my-5">Upload a theme </h3>
                     <form onSubmit={handleSubmit(onSubmit)}>
-
+                    <input type="file" name="" id="" />
 
                     <div class="modal-action">
                         <input className='btn' type="submit" value='yes' />

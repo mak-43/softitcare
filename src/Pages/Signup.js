@@ -200,10 +200,10 @@ const Signup = () => {
                     {/* <p>Forget Password ? <Link to='' 
                          onClick= {resetPassword}
                         className='text-cyan-400'><small>Reset Password</small></Link> </p> */}
-                    <div class="divider">OR</div>
+                    {/* <div class="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
-                        className='btn btn-glass hover:btn-accent'>Continue with Google</button>
+                        className='btn btn-glass hover:btn-accent'>Continue with Google</button> */}
                     {/* <button className='btn btn-glass hover:btn-accent'>Continue with Github</button> */}
                     {/* <button onClick={() => signInWithFacebook()} className='btn btn-glass hover:btn-accent'>Continue with Facebook</button> */}
                 </div>
